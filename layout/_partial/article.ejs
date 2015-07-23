@@ -1,8 +1,10 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+  <% if (post.type != 'about'){ %>
   <div class="article-meta">
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
     <%- partial('post/category') %>
   </div>
+  <% } %>
   <div class="article-inner">
     <%- partial('post/gallery') %>
     <% if (post.link || post.title){ %>
@@ -22,6 +24,7 @@
         <%- post.content %>
       <% } %>
     </div>
+    <% if (post.type != 'about'){ %>
     <footer class="article-footer">
       <% if (config.baidushare || theme.baidushare){ %>
         <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link" data-share="baidu"><%= __('share') %></a>
@@ -37,6 +40,7 @@
 
       <%- partial('post/tag') %>
     </footer>
+    <% } %>
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>
