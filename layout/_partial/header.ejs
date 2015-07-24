@@ -20,14 +20,14 @@
       </nav>
       <nav id="sub-nav">
         <% if (theme.rss){ %>
-          <a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="RSS Feed"></a>
+          <a class="nav-icon fa-rss" href="<%- theme.rss %>" title="RSS Feed"></a>
         <% } %>
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a class="nav-icon fa-search" title="Search"></a>
       </nav>
       <nav id="sub-nav-social">
         <% for (var i in theme.social){ %>
-            <a id="<%= 'nav-' + i.toLowerCase() + '-btn' %>" class="nav-icon" target="_blank" href="<%- url_for(theme.social[i]) %>" title="<%= i %>"></a>
-				<%}%>
+            <a id="<%= 'nav-' + i.toLowerCase() + '-btn' %>" class="nav-icon <%= 'fa-' + i.toLowerCase() %>" target="_blank" href="<%- url_for(theme.social[i]) %>" title="<%= i %>"></a>
+				<% } %>
       </nav>
       <div id="search-form-wrap">
         <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
