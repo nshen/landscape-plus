@@ -26,7 +26,11 @@
       </nav>
       <nav id="sub-nav-social">
         <% for (var i in theme.social){ %>
-            <a id="<%= 'nav-' + i.toLowerCase() + '-btn' %>" class="nav-icon <%= 'fa-' + i.toLowerCase() %>" target="_blank" href="<%- url_for(theme.social[i]) %>" title="<%= i %>"></a>
+          <% if (i.toLowerCase() == 'zhihu'){ %>
+            <a id="nav-zhihu-btn" class="nav-icon" target="_blank" href="<%- url_for(theme.social[i]) %>" title="知乎"></a>
+          <% } else { %>
+            <a class="nav-icon <%= 'fa-' + i.toLowerCase() %>" target="_blank" href="<%- url_for(theme.social[i]) %>" title="<%= i %>"></a>
+          <% } %>
 				<% } %>
       </nav>
       <div id="search-form-wrap">
