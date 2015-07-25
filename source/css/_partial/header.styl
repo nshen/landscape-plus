@@ -38,7 +38,7 @@
   z-index: -1
 
 #header-title
-  text-align: left
+  text-align: center
   height: logo-size
   position: absolute
   top: 50%
@@ -51,6 +51,8 @@ $logo-text
   font-weight: 300
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
 
+#logo-wrap
+  text-align: center
 #logo
   @extend $logo-text
   font-size: logo-size
@@ -59,6 +61,9 @@ $logo-text
   //background: #E32D40
   padding: 5px 10px
   border-radius: 5px
+  float: left
+  @media mq-mobile
+    float: none
 
 #subtitle
   @extend $logo-text
@@ -72,7 +77,7 @@ $logo-text
 
 #main-nav
   float: left
-  margin-left: 270px
+  //margin-left: 270px
 
 $nav-link
   float: left
@@ -97,6 +102,7 @@ $nav-link
   position: relative
   cursor: pointer
 
+
 .main-nav-link
   @extend $nav-link
   font-weight: 300
@@ -109,7 +115,12 @@ $nav-link
   &:before
     content: "\f0c9"
   @media mq-mobile
-    display: block
+    display: inline
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    
 
 #sub-nav
   float: right
@@ -118,6 +129,8 @@ $nav-link
 #sub-nav-social
   float: right
   margin-right: 5px
+  @media mq-mobile
+    display: none
 
 #search-form-wrap
   position: absolute
