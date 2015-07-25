@@ -2,10 +2,7 @@
   <div id="banner"></div>
   <div id="header-outer" class="outer">
     <div id="header-inner" class="inner">
-      <h1 id="logo-wrap">
-          <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
-      </h1>
-      <!--<div id="header-title">
+      <div id="header-title">
         <h1 id="logo-wrap">
           <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
         </h1>
@@ -14,7 +11,7 @@
             <a href="<%- url_for() %>" id="subtitle"><%= theme.subtitle %></a>
           </h2>
         <% } %>
-      </div>-->
+      </div>
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         <% for (var i in theme.menu){ %>
@@ -23,14 +20,14 @@
       </nav>
       <nav id="sub-nav">
         <% if (theme.rss){ %>
-          <a class="nav-icon fa-rss" href="<%- theme.rss %>" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon fa-rss" href="<%- theme.rss %>" title="RSS Feed"></a>
         <% } %>
-        <a class="nav-icon fa-search" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon fa-search" title="Search"></a>
       </nav>
       <nav id="sub-nav-social">
         <% for (var i in theme.social){ %>
           <% if (i.toLowerCase() == 'zhihu'){ %>
-            <a id="nav-zhihu-btn" class="nav-icon" target="_blank" href="<%- url_for(theme.social[i]) %>" title="知乎"></a>
+            <a class="nav-icon if-zhihu" target="_blank" href="<%- url_for(theme.social[i]) %>" title="知乎"></a>
           <% } else { %>
             <a class="nav-icon <%= 'fa-' + i.toLowerCase() %>" target="_blank" href="<%- url_for(theme.social[i]) %>" title="<%= i %>"></a>
           <% } %>

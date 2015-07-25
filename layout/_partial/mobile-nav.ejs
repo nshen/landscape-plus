@@ -1,5 +1,16 @@
 <nav id="mobile-nav">
+<div>
   <% for (var i in theme.menu){ %>
     <a href="<%- url_for(theme.menu[i]) %>" class="mobile-nav-link"><%= i %></a>
   <% } %>
+  </div>
+  <div id="mobile-nav-social">
+    <% for (var i in theme.social){ %>
+      <% if (i.toLowerCase() == 'zhihu'){ %>
+        <a class="nav-icon if-zhihu" target="_blank" href="<%- url_for(theme.social[i]) %>" title="知乎"></a>
+      <% } else { %>
+        <a class="nav-icon <%= 'fa-' + i.toLowerCase() %>" target="_blank" href="<%- url_for(theme.social[i]) %>" title="<%= i %>"></a>
+      <% } %>
+    <% } %>
+  </div>
 </nav>
