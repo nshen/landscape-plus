@@ -1,8 +1,8 @@
 <nav id="mobile-nav">
-<div>
-  <% for (var i in theme.menu){ %>
-    <a href="<%- url_for(theme.menu[i]) %>" class="mobile-nav-link"><%= i %></a>
-  <% } %>
+  <div>
+    <% for (var i in theme.menu){ %>
+      <a href="<%- url_for(theme.menu[i]) %>" class="mobile-nav-link"><%= i %></a>
+    <% } %>
   </div>
   <div id="mobile-nav-social">
     <% for (var i in theme.social){ %>
