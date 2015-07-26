@@ -2,6 +2,8 @@
   height: banner-height
   position: relative
   border-bottom: 1px solid color-border
+  @media mq-mobile
+    height: banner-height - 20px
 /*    &:before, &:after
     content: ""
     position: absolute
@@ -58,6 +60,7 @@ $logo-text
   float: left
   @media mq-mobile
     float: none
+    font-size: logo-size - 10px
 
 #subtitle
   @extend $logo-text
@@ -113,18 +116,16 @@ $nav-link
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: -15px;
 
 
 #sub-nav
   float: right
-  margin-right: -15px
   @media mq-mobile
-    float: none
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
+    right: -15px;
     margin: auto;
 
 #sub-nav-social

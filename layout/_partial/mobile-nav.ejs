@@ -12,5 +12,8 @@
         <a class="nav-icon <%= 'fa-' + i.toLowerCase() %>" target="_blank" href="<%- url_for(theme.social[i]) %>" title="<%= i %>"></a>
       <% } %>
     <% } %>
+    <% if (theme.rss){ %>
+      <a id="nav-rss-link" class="nav-icon fa-rss" href="<%- theme.rss %>" title="RSS Feed"></a>
+    <% } %>
   </div>
 </nav>
