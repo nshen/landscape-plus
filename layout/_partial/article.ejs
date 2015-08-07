@@ -24,7 +24,6 @@
         <%- post.content %>
       <% } %>
     </div>
-    <% if (post.type != 'about'){ %>
     <footer class="article-footer">
       <% if (config.baidushare || theme.baidushare){ %>
         <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link" data-share="baidu" data-title="<%= post.title %>"><%= __('share') %></a>
@@ -40,7 +39,6 @@
 
       <%- partial('post/tag') %>
     </footer>
-    <% } %>
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>
