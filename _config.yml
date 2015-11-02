@@ -35,3 +35,6 @@ fb_app_id:
 
 # Baidu share
 baidushare: true
+
+# Duoshuo
+duoshuo_shortname: nshen121
