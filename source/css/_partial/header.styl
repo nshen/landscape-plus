@@ -2,7 +2,9 @@
   height: banner-height
   position: relative
   border-bottom: 1px solid color-border
-  &:before, &:after
+  @media mq-mobile
+    height: banner-height - 20px
+/*    &:before, &:after
     content: ""
     position: absolute
     left: 0
@@ -13,7 +15,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
   &:after
     bottom: 0
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))*/
 
 #header-outer
   height: 100%
@@ -22,6 +24,9 @@
 #header-inner
   position: relative
   overflow: hidden
+  left: 0
+  top: 50%
+  margin-top: -30px
 
 #banner
   position: absolute
@@ -36,11 +41,6 @@
 
 #header-title
   text-align: center
-  height: logo-size
-  position: absolute
-  top: 50%
-  left: 0
-  margin-top: logo-size * -0.5
 
 $logo-text
   text-decoration: none
@@ -49,13 +49,18 @@ $logo-text
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
 
 #logo
+  display: inline-block
   @extend $logo-text
   font-size: logo-size
   line-height: logo-size
   letter-spacing: 2px
-  background: #E32D40
-  padding: 5px 10px
+  //background: #E32D40
+  padding: 5px 10px 10px 10px
   border-radius: 5px
+  float: left
+  @media mq-mobile
+    float: none
+    font-size: logo-size - 10px
 
 #subtitle
   @extend $logo-text
@@ -69,7 +74,7 @@ $logo-text
 
 #main-nav
   float: left
-  margin-left: -15px
+  //margin-left: 270px
 
 $nav-link
   float: left
@@ -94,6 +99,7 @@ $nav-link
   position: relative
   cursor: pointer
 
+
 .main-nav-link
   @extend $nav-link
   font-weight: 300
@@ -106,19 +112,27 @@ $nav-link
   &:before
     content: "\f0c9"
   @media mq-mobile
-    display: block
+    display: inline
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -15px;
+
 
 #sub-nav
   float: right
-  margin-right: -15px
+  @media mq-mobile
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -15px;
+    margin: auto;
 
-#nav-rss-link
-  &:before
-    content: "\f09e"
-
-#nav-search-btn
-  &:before
-    content: "\f002"
+#sub-nav-social
+  float: right
+  margin-right: 5px
+  @media mq-mobile
+    display: none
 
 #search-form-wrap
   position: absolute
@@ -134,6 +148,11 @@ $nav-link
   @media mq-mobile
     width: 100%
     right: -100%
+
+.if-zhihu
+  font-family: font-icon-user
+  &:before
+    content: "\e605"
 
 .search-form
   position: absolute
