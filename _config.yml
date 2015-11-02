@@ -1,29 +1,31 @@
 # Header
 menu:
   主页: /
-  归档: /archives
+  #归档: /archives
+  #学习笔记: /categories/article/
+  #实验项目: /categories/project/
+  所有日志: /list
   关于: /about
-rss: /atom.xml
+  友情链接: /links
+  
+rss: /atom.xml #http://feed.feedsky.com/nshen
 
 # Content
 excerpt_link: Read More
-fancybox: false
-mathjax: true
+fancybox: true
+mathjax: false
 
 # Sidebar
-sidebar: right
+sidebar: bottom #right
 widgets:
 - category
-- tag
+#- tag
 - tagcloud
-- archive
-- recent_posts
-- links
+#- archive
+#- recent_posts
+#- links
 
 # Links
-links:
-  主题作者: http://xiguabaobao.com
-  热前端: http://reqianduan.com
 
 # Miscellaneous
 google_analytics:
