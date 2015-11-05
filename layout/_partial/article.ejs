@@ -21,6 +21,14 @@
           </p>
         <% } %>
       <% } else { %>
+		<!-- 文章目录开始 -->
+		<% if (!index && post.toc){ %>
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">本文目录</strong>
+				<%- toc(page.content) %>
+			</div>
+		<% } %>
+		<!-- 文章目录结束 -->
         <%- post.content %>
         <hr>
         <blockquote>
