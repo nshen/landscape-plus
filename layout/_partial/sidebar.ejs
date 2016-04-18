@@ -1,5 +1,13 @@
-<aside id="sidebar"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
-  <% theme.widgets.forEach(function(widget){ %>
-    <%- partial('_widget/' + widget) %>
-  <% }) %>
+<aside id="sidebar" <% if (theme.sidebar==='bottom' ){ %> class="outer"
+  <% } %>>
+    <% theme.widgets.forEach(function(widget){ %>
+      <%- partial('_widget/' + widget) %>
+        <% }) %>
+
+          <div class="widget-wrap">
+            <h3 class="widget-title">空间提供</h3>
+            <div class="widget">
+              <a href="http://coding.net" target="blank"><img src="/image/codingnet.png" /></a>
+            </div>
+          </div>
 </aside>
